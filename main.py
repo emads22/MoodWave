@@ -30,11 +30,11 @@ def app():
                 with st.spinner('Analyzing the mood...'):
                     # Read the contents of the uploaded file (type <class 'bytes'>)
                     audio_data = uploaded_file.read()
-                    
+
                     # Convert the audio data (type <class 'bytes'>) to a BytesIO object (type <class '_io.BytesIO'>)
-                    # This conversion is necessary because many audio processing libraries (like speech-recognition) 
-                    # and functions expect a file-like object (BytesIO provides this functionality in memory without 
-                    # needing to write to disk). It also allows seamless integration with functions 
+                    # This conversion is necessary because many audio processing libraries (like speech-recognition)
+                    # and functions expect a file-like object (BytesIO provides this functionality in memory without
+                    # needing to write to disk). It also allows seamless integration with functions
                     # that accept file streams for further processing.
                     audio_bytes = BytesIO(audio_data)
 
@@ -45,8 +45,7 @@ def app():
                     mood = analyze_mood(text)
 
                 # Display the detected mood
-                st.success(f'Detected Mood:&nbsp;&nbsp;&nbsp;&nbsp;{
-                           mood.title()}')
+                st.info(f'Detected Mood:&nbsp;&nbsp;&nbsp;&nbsp;{mood}')
 
         # Inside the second column
         with col2:
