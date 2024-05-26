@@ -1,54 +1,41 @@
-import nltk
-from nltk.data import find
-from nltk.sentiment import SentimentIntensityAnalyzer
+import speech_recognition as sr
 
 
-
-def download_nltk_vader_lexicon():
+def speech_to_text(audio_file):
     """
-    Checks if the NLTK Vader lexicon is available. If not, downloads it.
-    
-    This function checks if the NLTK Vader lexicon is available in the NLTK data
-    directory. If it's not found, it downloads the lexicon. NLTK (Natural Language
-    Toolkit) provides tools and resources for working with human language data.
-    The Vader lexicon is a lexicon for sentiment analysis.
+    Convert speech audio to text using Google Speech Recognition.
 
-    Args:
-        None
+    Parameters:
+    audio_file (BytesIO): BytesIO object containing the audio data.
 
     Returns:
-        None
+    str: The recognized text from the speech.
     """
+
     try:
-        # Check if the NLTK Vader lexicon is available
-        nltk.data.find('sentiment/vader_lexicon')
-    except LookupError:
-        # If the lexicon is not found, download it
-        nltk.download('vader_lexicon')
+        # Initialize the recognizer
+        recognizer = sr.Recognizer()
 
+        # Use the in-memory audio file as the audio source
+        with sr.AudioFile(audio_file) as source:
+            audio = recognizer.record(source)  # read the entire audio file
 
+        # Recognize the speech using Google Speech Recognition
+        text = recognizer.recognize_google(audio)
+        return text
 
-def analyze_mood(text):
-    """
-    Analyze the mood (positive or negative) of a given text.
+    # Handle cases where speech is not recognized
+    except sr.UnknownValueError:
+        return "Google Speech Recognition could not understand audio."
 
-    Args:
-        text (str): The input text to analyze.
+    # Handle cases where there is an issue with the Google Speech Recognition request
+    except sr.RequestError as e:
+        return f"Could not request results from Google Speech Recognition service; {e}"
 
-    Returns:
-        str: The mood of the text, either "Positive" or "Negative".
-    """
-    # Download the NLTK Vader lexicon
-    download_nltk_vader_lexicon()
+    # Handle cases where the audio file is not found
+    except FileNotFoundError:
+        return "Audio File not found."
 
-    # Initialize SentimentIntensityAnalyzer for sentiment analysis
-    analyzer = SentimentIntensityAnalyzer()
-
-    # Perform sentiment analysis on the text
-    sentiment_scores = analyzer.polarity_scores(text)
-
-    # Determine mood based on the compound sentiment score
-    if sentiment_scores["compound"] < 0:
-        return "Negative"
-    else:
-        return "Positive"
+    # Handle any other exceptions that may occur
+    except Exception as e:
+        return f"An error occurred while converting the speech track to text; {e}"
