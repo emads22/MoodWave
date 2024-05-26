@@ -8,11 +8,12 @@ def app():
 
     st.title('Audio Mood Analyzer')
 
-    st.subheader('Upload Audio File')
+    # Add hint for accepted format
+    st.subheader('Upload Audio File _(*WAV format only*)_')
 
-    # Create a file uploader widget where users can upload audio files with formats mp3 or wav
+    # Create a file uploader widget where users can upload audio files with WAV format only
     uploaded_file = st.file_uploader(
-        "Choose an audio file", type=['mp3', 'wav'])
+        "Choose an audio file", type=['wav'])
 
     # Check if an audio file is uploaded
     if uploaded_file is not None:

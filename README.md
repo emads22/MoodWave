@@ -1,7 +1,7 @@
 # Audio Mood Analyzer
 
 ## Overview
-Audio Mood Analyzer is a web application designed to facilitate the analysis of audio content. Users can upload audio files of various formats, and the application employs advanced Natural Language Processing (NLP) techniques to transcribe the speech within these files into text. Leveraging NLP's capabilities, particularly sentiment analysis, the system then evaluates the mood expressed in the transcribed text, providing users with insights into the emotional content of the audio. This process enables users to gain a deeper understanding of the sentiment conveyed in the spoken content, offering valuable applications in fields such as market research, customer feedback analysis, and emotional content evaluation.
+Audio Mood Analyzer is a web application designed to facilitate the analysis of audio content. Users can upload audio files of `WAV format`, and the application employs advanced Natural Language Processing (NLP) techniques to transcribe the speech within these files into text. Leveraging NLP's capabilities, particularly sentiment analysis, the system then evaluates the mood expressed in the transcribed text, providing users with insights into the emotional content of the audio. This process enables users to gain a deeper understanding of the sentiment conveyed in the spoken content, offering valuable applications in fields such as market research, customer feedback analysis, and emotional content evaluation.
 
 ## Features
 - **Audio Upload**: Users can upload audio files in mp3 or wav format.
@@ -37,7 +37,7 @@ Audio Mood Analyzer is a web application designed to facilitate the analysis of 
    ```
 
 2. Open your web browser and navigate to the local URL provided by Streamlit to interact with the application.
-3. Upload an audio file and click the "Analyze Mood" button to view the mood analysis.
+3. Upload an audio file of `WAV format` and click the `Analyze Mood` button to view the mood analysis.
 
 ## Contributing
 Contributions are welcome! Here are some ways you can contribute to the project:
