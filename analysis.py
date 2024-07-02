@@ -46,7 +46,9 @@ def analyze_mood(text):
     sentiment_scores = analyzer.polarity_scores(text)
 
     # Determine mood based on the compound sentiment score
-    if sentiment_scores["compound"] < 0:
+    if sentiment_scores["compound"] <= -0.05:
         return "Negative"
-    else:
+    elif sentiment_scores['compound'] >= 0.05:
         return "Positive"
+    else:
+        return "Neutral"

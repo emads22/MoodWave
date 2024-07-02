@@ -6,7 +6,12 @@ from analysis import analyze_mood
 
 def app():
 
-    st.title('Audio Mood Analyzer')
+    st.markdown("""
+        <p>
+            <span style="display: inline; font-size: 3em; font-weight: bold;">MoodWave:&nbsp;&nbsp;</span>
+            <span style="display: inline; font-size: 2em; font-weight: bold;">Audio Sentiment Analyzer</span>
+        </p>
+    """, unsafe_allow_html=True)
 
     # Add hint for accepted format
     st.subheader('Upload Audio File _(*WAV format only*)_')
@@ -46,7 +51,13 @@ def app():
                     mood = analyze_mood(text)
 
                 # Display the detected mood
-                st.info(f'Detected Mood:&nbsp;&nbsp;&nbsp;&nbsp;{mood}')
+                if mood == "Positive":
+                    st.success(f'Detected Mood:&nbsp;&nbsp;&nbsp;&nbsp;{mood}')
+                elif mood == "Negative":
+                    st.warning(f'Detected Mood:&nbsp;&nbsp;&nbsp;&nbsp;{mood}')
+                else:  # mood == "Neutral"
+                    st.info(f'Detected Mood:&nbsp;&nbsp;&nbsp;&nbsp;{mood}')
+                
 
         # Inside the second column
         with col2:

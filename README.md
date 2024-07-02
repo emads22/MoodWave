@@ -1,12 +1,20 @@
-# Audio Mood Analyzer
+# MoodWave: Audio Sentiment Analyzer
 
 ## Overview
-Audio Mood Analyzer is a web application designed to facilitate the analysis of audio content. Users can upload audio files of `WAV format`, and the application employs advanced Natural Language Processing (NLP) techniques to transcribe the speech within these files into text. Leveraging NLP's capabilities, particularly sentiment analysis, the system then evaluates the mood expressed in the transcribed text, providing users with insights into the emotional content of the audio. This process enables users to gain a deeper understanding of the sentiment conveyed in the spoken content, offering valuable applications in fields such as market research, customer feedback analysis, and emotional content evaluation.
+MoodWave is a web application designed to facilitate the analysis of audio content. Users can upload audio files of `WAV format`, and the application employs advanced Natural Language Processing (NLP) techniques to transcribe the speech within these files into text. Leveraging NLP's capabilities, particularly sentiment analysis, the system then evaluates the mood expressed in the transcribed text, providing users with insights into the emotional content of the audio. This process enables users to gain a deeper understanding of the sentiment conveyed in the spoken content, offering valuable applications in fields such as market research, customer feedback analysis, and emotional content evaluation.
 
 ## Features
 - **Audio Upload**: Users can upload audio files in mp3 or wav format.
 - **Speech to Text Conversion**: Converts the uploaded audio to text using Google Speech Recognition.
 - **Mood Analysis**: Analyzes the mood of the transcribed text as either positive or negative.
+
+## Technologies Used
+- **nltk**: Natural Language Toolkit for advanced natural language processing tasks.
+- **SpeechRecognition**: Library for converting speech to text.
+- **Streamlit**: Framework for building interactive web applications for machine learning and data science.
+- **io**: Core Python module for handling input and output operations.
+- **Conda**: Package and environment management system for installing multiple versions of software packages and managing dependencies.
+
 
 ## Setup
 1. Clone the repository.
@@ -38,6 +46,9 @@ Audio Mood Analyzer is a web application designed to facilitate the analysis of 
 
 2. Open your web browser and navigate to the local URL provided by Streamlit to interact with the application.
 3. Upload an audio file of `WAV format` and click the `Analyze Mood` button to view the mood analysis.
+    
+- **Note**:
+Some sample WAV audio files are included in `/assets/audios` for testing and demonstration.
 
 ## Contributing
 Contributions are welcome! Here are some ways you can contribute to the project:
