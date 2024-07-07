@@ -15,7 +15,7 @@ def app():
     """, unsafe_allow_html=True)
 
     # Add logo image from a file
-    st.image(str(LOGO_FILE), width=300)
+    st.image(str(LOGO_FILE), width=200)
 
     # Add hint for accepted format
     st.subheader('Upload Audio File _(*WAV format only*)_')
