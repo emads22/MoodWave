@@ -2,6 +2,7 @@ import streamlit as st
 from io import BytesIO
 from app_utils import speech_to_text
 from analysis import analyze_mood
+from constants import LOGO_FILE
 
 
 def app():
@@ -12,6 +13,9 @@ def app():
             <span style="display: inline; font-size: 2em; font-weight: bold;">Audio Sentiment Analyzer</span>
         </p>
     """, unsafe_allow_html=True)
+
+    # Add logo image from a file
+    st.image(str(LOGO_FILE), width=300)
 
     # Add hint for accepted format
     st.subheader('Upload Audio File _(*WAV format only*)_')
@@ -57,7 +61,6 @@ def app():
                     st.warning(f'Detected Mood:&nbsp;&nbsp;&nbsp;&nbsp;{mood}')
                 else:  # mood == "Neutral"
                     st.info(f'Detected Mood:&nbsp;&nbsp;&nbsp;&nbsp;{mood}')
-                
 
         # Inside the second column
         with col2:

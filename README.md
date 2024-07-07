@@ -1,5 +1,7 @@
 # MoodWave: Audio Sentiment Analyzer
 
+![MoodWave_logo](./assets/images/MoodWave_logo.png)
+
 ## Overview
 MoodWave is a web application designed to facilitate the analysis of audio content. Users can upload audio files of `WAV format`, and the application employs advanced Natural Language Processing (NLP) techniques to transcribe the speech within these files into text. Leveraging NLP's capabilities, particularly sentiment analysis, the system then evaluates the mood expressed in the transcribed text, providing users with insights into the emotional content of the audio. This process enables users to gain a deeper understanding of the sentiment conveyed in the spoken content, offering valuable applications in fields such as market research, customer feedback analysis, and emotional content evaluation.
 
